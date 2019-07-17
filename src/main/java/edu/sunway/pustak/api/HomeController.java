@@ -2,18 +2,16 @@ package edu.sunway.pustak.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.security.Principal;
 
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
 @RestController
+@RequestMapping("/api/v1")
 public class HomeController {
 
-    @ResponseBody
-    @RequestMapping(method = POST,path = "/home")
+    public static final String BASE_URL = "/api/v1";
+
+    @GetMapping("/home")
     public String index()
     {
         return "WOrking!!!";

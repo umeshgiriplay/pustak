@@ -32,10 +32,11 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(
-            AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+            AuthorizationServerSecurityConfigurer oauthServer) {
         oauthServer.tokenKeyAccess("permitAll()")
                 .checkTokenAccess("isAuthenticated()");
     }
+
 
     @Override
     public void configure(final AuthorizationServerEndpointsConfigurer endpoints){

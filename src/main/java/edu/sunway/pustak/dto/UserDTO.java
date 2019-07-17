@@ -1,47 +1,16 @@
-package edu.sunway.pustak.entity;
-
+package edu.sunway.pustak.dto;
 
 import edu.sunway.pustak.enums.Roles;
 import edu.sunway.pustak.enums.UserStatus;
-import jdk.net.SocketFlow;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+public class UserDTO {
 
-@Entity
-public class User {
-
-    @Id
-    @GeneratedValue
     private Long id;
-
     private String name;
-
     private String userName;
-
     private String password;
-
     private UserStatus status;
-
     private Roles role;
-
-    public User()
-    {
-        super();
-    }
-
-    public User(String name)
-    {
-        super();
-        this.name=name;
-    }
-    public User(Long id,String name)
-    {
-        super();
-        this.id = id;
-        this.name=name;
-    }
 
     public Long getId() {
         return id;
