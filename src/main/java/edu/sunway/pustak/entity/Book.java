@@ -10,7 +10,7 @@ import java.util.List;
 public class Book {
 
     private Long bookId;
-    private String bookTitle;
+    private BookTitle titleId;
     private String description;
     private int viewsCount;
     private double overallRating;           // use the list of rating to determine overall rating
@@ -36,14 +36,14 @@ public class Book {
         this.bookId = bookId;
     }
 
-    @Basic
-    @Column(name = "book_title", nullable = false, unique = true)
-    public String getBookTitle() {
-        return bookTitle;
+    @OneToOne
+    @JoinColumn(name = "book_title", nullable = false)
+    public BookTitle getTitleId() {
+        return titleId;
     }
 
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
+    public void setTitleId(BookTitle titleId) {
+        this.titleId = titleId;
     }
 
     @Basic

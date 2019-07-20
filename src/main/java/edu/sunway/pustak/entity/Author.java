@@ -1,7 +1,7 @@
 package edu.sunway.pustak.entity;
 
 import javax.persistence.*;
-import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "author", schema = "pustak")
@@ -11,7 +11,7 @@ public class Author {
     private String name;
     private Long noOfBooks;
 
-    private Collection<Book> booksWritten;
+    private List<Book> booksWritten;
 
 
     @Id
@@ -45,11 +45,11 @@ public class Author {
     }
 
     @OneToMany(mappedBy = "authorId")
-    public Collection<Book> getBooksWritten() {
+    public List<Book> getBooksWritten() {
         return booksWritten;
     }
 
-    public void setBooksWritten(Collection<Book> booksWritten) {
+    public void setBooksWritten(List<Book> booksWritten) {
         this.booksWritten = booksWritten;
     }
 }

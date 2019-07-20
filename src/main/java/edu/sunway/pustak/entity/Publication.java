@@ -2,7 +2,7 @@ package edu.sunway.pustak.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "publications", schema = "pustak")
@@ -12,7 +12,7 @@ public class Publication {
     private String publicationName;
     private Date publishedYear;
 
-    private Collection<Book> publishedBooks;
+    private List<Book> publishedBooks;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,11 +45,11 @@ public class Publication {
     }
 
     @OneToMany(mappedBy = "publicationId")
-    public Collection<Book> getPublishedBooks() {
+    public List<Book> getPublishedBooks() {
         return publishedBooks;
     }
 
-    public void setPublishedBooks(Collection<Book> publishedBooks) {
+    public void setPublishedBooks(List<Book> publishedBooks) {
         this.publishedBooks = publishedBooks;
     }
 }
