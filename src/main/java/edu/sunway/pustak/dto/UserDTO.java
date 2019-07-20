@@ -1,6 +1,6 @@
 package edu.sunway.pustak.dto;
 
-import edu.sunway.pustak.enums.Roles;
+import edu.sunway.pustak.enums.Role;
 import edu.sunway.pustak.enums.UserStatus;
 
 public class UserDTO {
@@ -10,7 +10,7 @@ public class UserDTO {
     private String userName;
     private String password;
     private UserStatus status;
-    private Roles role;
+    private Role role;
 
     public Long getId() {
         return id;
@@ -44,11 +44,11 @@ public class UserDTO {
         this.status = status;
     }
 
-    public Roles getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(Roles role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
