@@ -3,51 +3,37 @@ package edu.sunway.pustak.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ratings", schema = "pustak")
 public class Rating {
 
-    private Long ratingId;
-    private User userId;
-    private Book bookId;
-    private int noOfStars;  // out of 10
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getRatingId() {
-        return ratingId;
-    }
-
-    public void setRatingId(Long ratingId) {
-        this.ratingId = ratingId;
-    }
-
+    @GeneratedValue
+    private Long id;
     @OneToOne
-    @JoinColumn(name = "userId", referencedColumnName = "userId", nullable = false)
-    public User getUserId() {
-        return userId;
+    private User user;
+    private int rating;
+
+
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @OneToOne
-    @JoinColumn(name = "bookId", referencedColumnName = "bookId", nullable = false)
-    public Book getBookId() {
-        return bookId;
+    public User getUser() {
+        return user;
     }
 
-    public void setBookId(Book bookId) {
-        this.bookId = bookId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    @Basic
-    @Column(name = "rating", nullable = false)
-    public int getNoOfStars() {
-        return noOfStars;
+    public int getRating() {
+        return rating;
     }
 
-    public void setNoOfStars(int noOfStars) {
-        this.noOfStars = noOfStars;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }

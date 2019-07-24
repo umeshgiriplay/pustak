@@ -6,39 +6,29 @@ import edu.sunway.pustak.enums.UserStatus;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user", schema = "pustak")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    @GeneratedValue
+    private Long id;
 
-    @Basic
-    @Column(name = "name", nullable = false)
     private String name;
 
-    @Basic
-    @Column(name = "username", nullable = false)
     private String userName;
 
-    @Basic
-    @Column(name = "password", nullable = false)
     private String password;
 
-    @Basic
-    @Column(name = "status", nullable = false)
     private UserStatus status;
 
-    @Basic
-    @Column(name = "role", nullable = false)
     private Role role;
 
-    public Long getUserId() {
-        return userId;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -4,47 +4,32 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "comments", schema = "pustak")
 public class Comments {
 
-    private Long commentId;
-    private User userId;
-    private Book bookId;
+    @Id
+    @GeneratedValue
+    private Long id;
+    @OneToOne
+    private User user;
     private Timestamp commentTime;
     private String comment;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getCommentId() {
-        return commentId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCommentId(Long commentId) {
-        this.commentId = commentId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "userId", nullable = false)
-    public User getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "bookId", referencedColumnName = "bookId", nullable = false)
-    public Book getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(Book bookId) {
-        this.bookId = bookId;
-    }
-
-    @Basic
-    @Column(name = "comment_time", nullable = false)
     public Timestamp getCommentTime() {
         return commentTime;
     }
@@ -53,8 +38,6 @@ public class Comments {
         this.commentTime = commentTime;
     }
 
-    @Basic
-    @Column(name = "comment", nullable = false, length = 1000)
     public String getComment() {
         return comment;
     }

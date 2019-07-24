@@ -4,28 +4,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "author", schema = "pustak")
 public class Author {
 
-    private Long authorId;
-    private String name;
-    private Long noOfBooks;
-
-    private List<Book> booksWritten;
-
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getAuthorId() {
-        return authorId;
+    @GeneratedValue
+    private Long id;
+    private String name;
+
+    @OneToMany
+    private List<Book> books;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setAuthorId(Long authorId) {
-        this.authorId = authorId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @Basic
-    @Column(name = "author_name", unique = true)
     public String getName() {
         return name;
     }
@@ -34,22 +30,11 @@ public class Author {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "no_of_books")
-    public Long getNoOfBooks() {
-        return noOfBooks;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setNoOfBooks(Long noOfBooks) {
-        this.noOfBooks = noOfBooks;
-    }
-
-    @OneToMany(mappedBy = "authorId")
-    public List<Book> getBooksWritten() {
-        return booksWritten;
-    }
-
-    public void setBooksWritten(List<Book> booksWritten) {
-        this.booksWritten = booksWritten;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }

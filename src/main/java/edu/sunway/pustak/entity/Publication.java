@@ -5,51 +5,45 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "publications", schema = "pustak")
 public class Publication {
 
-    private Long publicationId;
-    private String publicationName;
-    private Date publishedYear;
-
-    private List<Book> publishedBooks;
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getPublicationId() {
-        return publicationId;
+    @GeneratedValue
+    private Long id;
+    private String name;
+    private Date year;
+    @OneToMany
+    private List<Book> books;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setPublicationId(Long publicationId) {
-        this.publicationId = publicationId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @Basic
-    @Column(name = "publication_name")
-    public String getPublicationName() {
-        return publicationName;
+    public String getName() {
+        return name;
     }
 
-    public void setPublicationName(String publicationName) {
-        this.publicationName = publicationName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Basic
-    @Column(name = "published_year")
-    public Date getPublishedYear() {
-        return publishedYear;
+    public Date getYear() {
+        return year;
     }
 
-    public void setPublishedYear(Date publishedYear) {
-        this.publishedYear = publishedYear;
+    public void setYear(Date year) {
+        this.year = year;
     }
 
-    @OneToMany(mappedBy = "publicationId")
-    public List<Book> getPublishedBooks() {
-        return publishedBooks;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setPublishedBooks(List<Book> publishedBooks) {
-        this.publishedBooks = publishedBooks;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }
