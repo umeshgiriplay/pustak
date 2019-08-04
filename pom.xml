@@ -11,6 +11,7 @@
     <groupId>edu.sunway</groupId>
     <artifactId>pustak</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>pustak</name>
     <description>Pustak</description>
 
@@ -31,10 +32,12 @@
             <scope>test</scope>
         </dependency>
 
+<!--
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-starter-data-jpa</artifactId>
         </dependency>
+-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
