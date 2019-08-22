@@ -29,7 +29,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.requestMatchers()
-                .antMatchers("/login", "/oauth/authorize")
+                .antMatchers("/login", "/oauth/authorize","oauth/token")
                 .and()
                 .authorizeRequests()
                 .anyRequest().authenticated()
@@ -37,13 +37,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin().permitAll();
     }
 
-    @Override
+/*    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser(username)
                 .password(passwordEncoder().encode(password))
                 .roles("USER");
-    }
+    }*/
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

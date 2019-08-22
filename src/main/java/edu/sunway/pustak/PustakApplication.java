@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableResourceServer
 @ComponentScan("edu.sunway")
 @EnableJpaRepositories("edu.sunway.pustak.repositories")
-public class PustakApplication implements CommandLineRunner {
+public class PustakApplication {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -28,8 +28,8 @@ public class PustakApplication implements CommandLineRunner {
         SpringApplication.run(PustakApplication.class, args);
     }
 
-    @Override
+/*    @Override
     public void run(String... args) throws Exception {
         logger.info("All users  -> {}", userRepository.findAll());
-    }
+    }*/
 }

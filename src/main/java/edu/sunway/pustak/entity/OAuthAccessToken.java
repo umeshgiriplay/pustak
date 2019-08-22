@@ -14,7 +14,7 @@ public class OAuthAccessToken {
 
     private Blob token;
 
-    @Column(unique=true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String authentication_id;
 
     private String user_name;
@@ -80,3 +80,4 @@ public class OAuthAccessToken {
     public void setRefresh_token(String refresh_token) {
         this.refresh_token = refresh_token;
     }
+}

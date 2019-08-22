@@ -18,10 +18,19 @@ public class User {
 
     private String password;
 
+    private String verificationCode;
+
     private UserStatus status;
 
     private Role role;
 
+    public String getVerificationCode() {
+        return verificationCode;
+    }
+
+    public void setVerificationCode(String verificationCode) {
+        this.verificationCode = verificationCode;
+    }
 
     public Long getId() {
         return id;

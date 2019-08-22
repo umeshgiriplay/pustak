@@ -1,20 +1,12 @@
-/**
- * 
- */
-package com.mobilebanking.repositories;
+package edu.sunway.pustak.repositories;
 
-import java.util.List;
-
+import edu.sunway.pustak.entity.OAuthClient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.mobilebanking.entity.OAuthClient;
+import java.util.List;
 
-/**
- * @author bibek
- *
- */
 @Repository
 public interface OAuthClientRepository extends JpaRepository<OAuthClient, String> {
 	

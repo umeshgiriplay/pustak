@@ -2,6 +2,7 @@ package edu.sunway.pustak.oauth;
 
 
 import edu.sunway.pustak.repositories.UserRepository;
+import edu.sunway.pustak.security.PustakUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -25,7 +26,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         this.userRepository = userRepository;
     }
 
-/*
 
     @Autowired
     public void configureGlobal(final AuthenticationManagerBuilder auth) throws Exception {
@@ -33,9 +33,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     }
 
     private UserDetailsService userDetailsService() {
-        return new KhanePaniUserDetailsService(userRepository);
+        return new PustakUserDetailService(userRepository);
     }
-*/
 
     @Override
     public void configure(HttpSecurity http) throws Exception {

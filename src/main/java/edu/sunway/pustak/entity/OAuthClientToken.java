@@ -1,18 +1,10 @@
-/**
- * 
- */
-package com.mobilebanking.entity;
-
-import java.sql.Blob;
+package edu.sunway.pustak.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Blob;
 
-/**
- * @author bibek
- *
- */
 @Entity
 @Table(name="oauth_client_token")
 public class OAuthClientToken {
